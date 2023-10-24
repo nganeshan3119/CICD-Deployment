@@ -17,7 +17,7 @@ stage('Playbook to Build code')
 {
 
 steps{
-ansiblePlaybook credentialsId: 'ansiblecredentials', disableHostKeyChecking: true, installation: 'myansible', inventory: 'dev.inv', playbook: 'CEPPlaybookMavenBuild.yml'
+ansiblePlaybook credentialsId: 'ansiblecredentials', disableHostKeyChecking: true, installation: 'myansible', inventory: 'dev.inv', playbook: 'playbookinstall.yaml'
 
 }
 
@@ -28,7 +28,7 @@ stage('Playbook to deploy code')
 {
 
 steps{
-ansiblePlaybook credentialsId: 'ansiblecredentials', disableHostKeyChecking: true, installation: 'myansible', inventory: 'dev.inv', playbook: 'CEPPlaybookDockerDeployment.yml'
+ansiblePlaybook credentialsId: 'ansiblecredentials', disableHostKeyChecking: true, installation: 'myansible', inventory: 'dev.inv', playbook: 'deployment.yaml'
 
 }
 
